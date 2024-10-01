@@ -31,10 +31,10 @@ def gameover(screen:pg.Surface) -> None:
     """
     enn = pg.Surface((WIDTH, HEIGHT))
     pg.draw.rect(enn, (0,0,0),pg.Rect(0,0,WIDTH, HEIGHT))
-    enn.set_alpha(200)
-    screen.blit(enn,[0,0])
-    fonto = pg.font.Font(None, 80)
-    txt = fonto.render("Game Over",
+    enn.set_alpha(200) #  透明度の指定
+    screen.blit(enn,[0,0]) #  描画
+    fonto = pg.font.Font(None, 80)  # フォント指定
+    txt = fonto.render("Game Over",  # Game Overを表示
             True, (255,255,255))
     screen.blit(txt, [300, 300])
     img = pg.image.load("fig/8.png")
@@ -64,7 +64,7 @@ def kirikae():
 
 def tuijyuu():
     print()
-    
+
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
