@@ -43,6 +43,21 @@ def gameover(screen:pg.Surface) -> None:
     screen.blit(img,[300,200])
     pg.display.update()
     time.sleep(5)
+def kakudai() -> None:
+    """
+    引数　
+    戻り値　None
+    """
+    accs = [a for a in range(1,11)]
+    imgs = list()
+    for r in range(1,11):
+        bb_img = pg.Surface((20*r, 20*r))
+        pg.draw.circle(bb_img,(255, 0, 0), (10*r, 10*r), 10*r)
+        imgs.append(bb_img)
+    
+        # avx = vx*bb_accs[min(tmr//500,9)]
+        # bb_img = bb_imgs[min(tmr//500,9)]
+    return imgs, accs
 
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
@@ -60,7 +75,12 @@ def main():
     vx, vy = +5, +5
     clock = pg.time.Clock()
     tmr = 0
+    bb_imgs, bb_accs = kakudai()
     while True:
+        avx = vx*bb_accs[min(tmr//500,9)]
+        bb_img = bb_imgs[min(tmr//500,9)]
+        bb_rct = bb_img.get_rect(center=bb_rct.center)     
+
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
