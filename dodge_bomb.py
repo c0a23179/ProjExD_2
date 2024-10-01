@@ -62,6 +62,9 @@ def kirikae():
     print()
 
 
+def tuijyuu():
+    print()
+    
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
