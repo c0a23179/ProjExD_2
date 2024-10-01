@@ -45,8 +45,8 @@ def gameover(screen:pg.Surface) -> None:
     time.sleep(5)
 def kakudai() -> None:
     """
-    引数　
-    戻り値　None
+    引数　None
+    戻り値　imgs, accs
     """
     accs = [a for a in range(1,11)]
     imgs = list()
@@ -58,6 +58,9 @@ def kakudai() -> None:
         # avx = vx*bb_accs[min(tmr//500,9)]
         # bb_img = bb_imgs[min(tmr//500,9)]
     return imgs, accs
+def kirikae():
+    print()
+
 
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
